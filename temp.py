@@ -47,7 +47,7 @@ def main(URL):
 	# retreiving price
 	try:
 		price = soup.find(
-			"span", attrs={'id': 'priceblock_ourprice'}).string.strip().replace(',', '')
+			"span", attrs={'id': 'priceblock_dealprice'}).string.strip().replace(',', '')
 		# we are omitting unnecessary spaces
 		# and commas form our string
 	except AttributeError:
@@ -92,7 +92,7 @@ def main(URL):
 	print("Availability = ", available)
 
 	# saving the availibility and closing the line
-	File.write(f"{available},\n")
+	File.write(f"{available}\n")
 
 	# closing the file
 	File.close()
